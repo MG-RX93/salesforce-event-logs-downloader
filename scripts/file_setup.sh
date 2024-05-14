@@ -20,5 +20,5 @@ touch tests/__init__.py tests/test_auth.py tests/test_query.py
 # Create package related files
 touch requirements.txt setup.py .env 
 
-# Create directory structure
-touch directory_structure.md
+# Create directory structure to serve as an example for creating project directories
+touch docs/directory_structure.md
