@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python Debugger: download-files",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "args": [
+        "placeholder",
+        "2024-04-13T00:00:00Z",
+        "2024-04-15T00:00:00Z"
+      ],
+      "console": "integratedTerminal"
+    }
+  ]
+}
