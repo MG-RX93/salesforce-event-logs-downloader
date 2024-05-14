@@ -6,7 +6,7 @@ END_COMMENT
 
 
 # Create .vscode dir files
-touch launch.json # ddebug configuration file
+touch .vscode/launch.json # debug configuration file
 
 # Create .github/workflow files (Testing, Building, Linting)
 touch .github/workflows/ci_test.yml .github/workflows/ci_build.yml .github/workflows/ci_lint.yml
