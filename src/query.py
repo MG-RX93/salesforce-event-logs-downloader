@@ -30,21 +30,25 @@ def execute_soql_query(query):
 
 def main(query_input):
     """Process the input and execute the SOQL query."""
-    soql_query = query_input if not os.path.isfile(query_input) else get_soql_query_from_file(query_input)
+    # Determine if the input is a file path or a direct query
+    if os.path.isfile(query_input):
+        soql_query = get_soql_query_from_file(query_input)
+    else:
+        soql_query = query_input  # Treat the input as a direct query
     return execute_soql_query(soql_query)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python script.py <PATH_TO_QUERY_FILE>.soql")
+        print("Usage: python script.py <PATH_TO_QUERY_FILE>.soql or <DIRECT_SOQL_QUERY>")
         sys.exit(1)
 
-    query_file = sys.argv[1]
+    query_input = sys.argv[1]
 
     try:
-        query_result = main(query_file)
+        query_result = main(query_input)
         print(query_result)
     except FileNotFoundError:
-        print(f"The file {query_file} does not exist.")
+        print(f"The file {query_input} does not exist.")
         sys.exit(1)
     except requests.exceptions.RequestException as e:
         print(f"Query failed: {e}")
