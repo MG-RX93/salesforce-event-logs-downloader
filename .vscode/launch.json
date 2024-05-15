@@ -6,6 +6,23 @@
       "type": "debugpy",
       "request": "launch",
       "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python Debugger: query-files",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "args": [
+        "scripts/soql/event_logs/apex_execution.soql",
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python Debugger: sample-config",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
       "args": [
         "placeholder",
         "2024-04-13T00:00:00Z",
