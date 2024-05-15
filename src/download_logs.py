@@ -80,7 +80,13 @@ def execute_curl_command(curl_command, record_id, output_file):
         print(f"Error downloading {record_id}: {e}")
 
 def download_event_log_files(event_type, query_file):
-    data, access_token = get_salesforce_data(query_file)
+    response, access_token = get_salesforce_data(query_file)
+
+     # Extract record IDs from the query result
+    data = [
+        (record["Id"], record["LogDate"], record["EventType"])
+        for record in response["records"]
+    ]
 
     for record_id, log_date, event_type in data:
         formatted_date, valid_event_type, dynamic_output_directory = create_output_directory(log_date, event_type)
