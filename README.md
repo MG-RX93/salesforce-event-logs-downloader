@@ -20,11 +20,14 @@ SF_VERSION_NUMBER=59.0
 
 # salesforce query params
 SF_DOMAIN_NAME=yourdomain.sandbox.my.salesforce.com
+EVENT_QUERY_PAIRS={"ApexExecution":"scripts/soql/event_logs/apex_execution.soql","ApexTrigger":"scripts/soql/event_logs/apex_trigger.soql","FlowExecution":"scripts/soql/event_logs/flows.soql","ApexUnexpectedException":"scripts/soql/event_logs/apex_exceptions.soql","LightningPageView":"scripts/soql/event_logs/ltg_page_view.soql"}
 
 # directory params
 OUTPUT_DIRECTORY=placeholder
 CURRENT_SPRINT_DIRECTORY=placeholder
 EVENT_LOG_BASE_DIR=placeholder
+EVENT_TYPES_MAPPING={"ApexExecution":"APEX_EXECUTION","ApexTrigger":"APEX_TRIGGER","FlowExecution":"FLOW_EXECUTION","ApexUnexpectedException":"APEX_UNEXPECTED_EXCEPTION","LightningPageView":"LIGHTNING_PAGE_VIEW","API":"API"}
+
 ```
 
 ## Create directories locally to store downloaded files
@@ -37,5 +40,5 @@ python3 ./scripts/python/cURL/create_dir.py FY2024 Q3 SPRINT_T
 ## Download Event Logs
 - Run the below command to download event logs.
 ```bash
-python3 ./scripts/python/cURL/download_elf.py ./scripts/python/cURL/soql/event_logs.soql
+python3 ./scripts/python/cURL/download_logs.py
 ```
