@@ -2,6 +2,18 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Python Debugger: create-directories",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "args":[
+        "FY2024",
+        "Q4",
+        "SPRINT_NAME"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
       "name": "Python Debugger: download-files",
       "type": "debugpy",
       "request": "launch",
